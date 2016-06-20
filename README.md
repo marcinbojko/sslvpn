@@ -12,8 +12,6 @@ Features
 
 #### 2016-06-20 Build 4.0.2329
 * initial package
-* added 'REINSTALLMODE=vomus REINSTALL=ALL ' to MSI install parameters (minor/major upgrade handling feature)
-
 
 # Usage
 ## Direct

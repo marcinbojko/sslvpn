@@ -26,7 +26,7 @@ if ($statusCode) {
 $packageArgs = @{
   packageName   = $packageName
   fileType      = 'msi'
-  silentArgs    = "/qn /norestart REINSTALLMODE=vomus REINSTALL=ALL /l*v `"$env:TEMP\chocolatey\$($packageName)\$($packageName).MsiInstall.log`" "
+  silentArgs    = "/qn /norestart /l*v `"$env:TEMP\chocolatey\$($packageName)\$($packageName).MsiInstall.log`" "
   validExitCodes= @(0, 3010, 1641)
   url           = $url
   checksumType  = 'md5'
