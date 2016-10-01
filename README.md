@@ -28,7 +28,7 @@ choco install sslvpn -source https://www.myget.org/F/public-choco
 or with added source
 
 ```cmd
-choco source add -n=eLeader -s"https://www.myget.org/F/public-choco" --priority=10
+choco source add -n=public-choco -s"https://www.myget.org/F/public-choco" --priority=10
 choco install sslvpn
 
 ```
