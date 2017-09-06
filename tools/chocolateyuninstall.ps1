@@ -17,12 +17,11 @@ $local_key     = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*'
 $machine_key   = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*'
 $machine_key6432 = 'HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*'
 
-$key = Get-ItemProperty -Path @($machine_key6432,$machine_key, $local_key) -ErrorAction SilentlyContinue | ? { $_.DisplayName -like "$softwareName" }| measure
+$key = Get-ItemProperty -Path @($machine_key6432,$machine_key, $local_key) -ErrorAction SilentlyContinue | Where-Object { $_.DisplayName -like "$softwareName" }| Measure-Object
 
 if ($key.Count -eq 1) {
-   
   if ($validExitCodes -NotContains (Start-Process -FilePath msiexec -ArgumentList "/x $UninstallGuid $silentArgs" -Wait -Passthru).ExitCode)
-        { 
+        {
             Throw "Probably registered, try to force unregistering"
         }
 

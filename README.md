@@ -12,6 +12,10 @@ FortiClient extends the power of FortiGate's Unified threat management to endpoi
 * [NEW] Tests local source (if exists) to prevent dowloading package from Internet
 * Requires source path to MyGet
 
+### 2017-09-06 Build 4.0.2329.20170906
+
+* package rebuild with binaries inside
+* sanitized a lots of code from previous versions
 
 ### 2016-10-01 Build 4.0.2329
 
